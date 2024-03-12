@@ -101,13 +101,9 @@ $(document).ready(function() {
             <tr>
               <td><a th:href="@{/admin/manageOrderView.do(n=${orderItem.itemOrderNo})}" th:text="${orderItem.itemOrderNo}"></a></td>
               <td><span th:text="${orderItem.name}"></span></td>
-              <td>(<span th:text="${orderItem.postcode}"></span>) <span
-                th:text="${orderItem.roadAddress}"></span> <span
-                th:text="${orderItem.detailAddress}"></span></td>
-              <td><span
-                th:text="${#numbers.formatDecimal(orderItem.orderTotal, 0, 'COMMA', 0, 'POINT')} + '원'"></span></td>
-              <td
-                th:class="${orderItem.delivery == '배송준비' ? 'status-ready' : (orderItem.delivery == '배송 중' ? 'status-in-transit' : (orderItem.delivery == '배송완료' ? 'status-complete' : ''))}">
+              <td>(<span th:text="${orderItem.postcode}"></span>) <span th:text="${orderItem.roadAddress}"></span> <span th:text="${orderItem.detailAddress}"></span></td>
+              <td><span th:text="${#numbers.formatDecimal(orderItem.orderTotal, 0, 'COMMA', 0, 'POINT')} + '원'"></span></td>
+              <td th:class="${orderItem.delivery == '배송준비' ? 'status-ready' : (orderItem.delivery == '배송 중' ? 'status-in-transit' : (orderItem.delivery == '배송완료' ? 'status-complete' : ''))}">
                 <span th:text="${orderItem.delivery}"></span>
               </td>
               <td>

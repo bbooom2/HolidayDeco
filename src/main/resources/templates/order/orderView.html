@@ -92,9 +92,7 @@ table.orderView img {
             <tbody>
               <tr>
                 <td><span th:text="${orderView[0].name}"></span></td>
-                <td>(<span th:text="${orderView[0].postcode}"></span>)
-                  <span th:text="${orderView[0].roadAddress}"></span> <span
-                  th:text="${orderView[0].detailAddress}"></span></td>
+                <td>(<span th:text="${orderView[0].postcode}"></span>) <span th:text="${orderView[0].roadAddress}"></span> <span th:text="${orderView[0].detailAddress}"></span></td>
                 <td><span th:text="${#numbers.formatDecimal(orderView[0].orderTotal, 0, 'COMMA', 0, 'POINT')} + '원'"></span></td>
                 <td>
                   <th:block th:if="${orderView[0].payMethod == 1}">카카오페이</th:block>
